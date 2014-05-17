@@ -1,5 +1,13 @@
 <div ng-controller="linksController">
-  <div ng-repeat="link in links" class = "link">
+Sort by:
+<div ng-click="predicate= 'title'"> Title </div>
+<div ng-click="predicate= '-visits'"> Visits </div>
+<div ng-click="predicate= 'url'"> URL </div>
+<div ng-click="predicate= '-date'"> shortened date </div>
+
+<div>Search:</div>
+<input type='text' name='Search' ng-model='search'>
+  <div ng-repeat="link in links | orderBy:predicate | filter:search" class = "link">
     <div class="info">
     <img src='/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
