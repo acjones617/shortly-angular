@@ -21,6 +21,7 @@ app.get('/create', handler.renderIndex);
 
 app.get('/links', handler.fetchLinks);
 app.post('/links', handler.saveLink);
+app.post('/', handler.saveLink);
 
 app.get('/login', handler.loginUserForm);
 app.post('/login', handler.loginUser);
